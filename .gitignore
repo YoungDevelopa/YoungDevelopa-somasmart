@@ -1,1 +1,23 @@
-﻿# Django .gitignore
+@"
+# Python
+__pycache__/
+*.py[cod]
+
+# Virtual environments
+env/
+venv/
+
+# Django
+db.sqlite3
+*.log
+**/migrations/
+**/__pycache__/
+
+# Static/media
+staticfiles/
+media/
+
+# System
+.DS_Store
+Thumbs.db
+"@ | Out-File -Encoding utf8 .gitignore
