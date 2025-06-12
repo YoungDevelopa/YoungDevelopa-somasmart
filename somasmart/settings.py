@@ -38,6 +38,7 @@ DATABASES = {
 
 
 ALLOWED_HOSTS = ['youngdevelopa-somasmart.onrender.com']
+ALLOWED_HOSTS = ['.onrender.com', 'localhost', '127.0.0.1']
 
 
 

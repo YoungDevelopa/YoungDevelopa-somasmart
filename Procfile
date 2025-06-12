@@ -1,1 +1,1 @@
-web: gunicorn somasmart.wsgi
+web: gunicorn somasmart.wsgi --log-file -
