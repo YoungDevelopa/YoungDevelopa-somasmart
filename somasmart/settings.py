@@ -37,7 +37,8 @@ DATABASES = {
 }
 
 
-ALLOWED_HOSTS = ['somasmart.onrender.com']
+ALLOWED_HOSTS = ['youngdevelopa-somasmart.onrender.com']
+
 
 
 
@@ -131,15 +132,21 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
 
-STATIC_URL = 'static/'
+import os
+STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-MPESA_CONSUMER_KEY = 'CG6AWLtxF5atH0gJ8YpUvGGGyoCBZM5I'
-MPESA_CONSUMER_SECRET = 'QzaqtS0ygD8cMToM'
-MPESA_SHORTCODE = '600983'  # Test Shortcode
-MPESA_PASSKEY = 'bfb279f9aa9bdbcf158e97dd71a467cd2e0c893059b10f78e6b72ada1ed2c919'
-MPESA_CALLBACK_URL = 'https://yourdomain.com/mpesa/callback/'  # Temporary
+from decouple import config
+
+
+MPESA_CONSUMER_KEY = config('MPESA_CONSUMER_KEY', default='CG6AWLtxF5atH0gJ8YpUvGGGyoCBZM5I')
+MPESA_CONSUMER_SECRET = config('MPESA_CONSUMER_SECRET', default='QzaqtS0ygD8cMToM')
+MPESA_SHORTCODE = config('MPESA_SHORTCODE', default='600983')
+MPESA_PASSKEY = config('MPESA_PASSKEY', default='bfb279f9aa9bdbcf158e97dd71a467cd2e0c893059b10f78e6b72ada1ed2c919')
+MPESA_CALLBACK_URL = config('MPESA_CALLBACK_URL', default='https://yourdomain.com/mpesa/callback/')

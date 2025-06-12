@@ -1,23 +1,9 @@
-@"
-# Python
-__pycache__/
-*.py[cod]
-
-# Virtual environments
-env/
 venv/
-
-# Django
-db.sqlite3
-*.log
-**/migrations/
-**/__pycache__/
-
-# Static/media
-staticfiles/
+__pycache__/
+*.pyc
 media/
-
-# System
-.DS_Store
-Thumbs.db
-"@ | Out-File -Encoding utf8 .gitignore
+staticfiles/
+.idea/
+*.sqlite3
+__pycache__/
+*.pyc
